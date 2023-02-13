@@ -68,7 +68,7 @@ onUnmounted(() => {
 
 .resume ul {
   list-style: initial;
-  padding-left: 40px;
+  padding-left: 20px;
 }
 
 .resume li {
@@ -125,8 +125,7 @@ onUnmounted(() => {
 
 .resume .skills__list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
   align-content: start;
 }
 
@@ -141,6 +140,12 @@ onUnmounted(() => {
 @media (max-width: 960px) {
   .resume {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .resume .skills__list {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>
