@@ -78,6 +78,15 @@ const tabsStore = useTabsStore();
           ></textarea>
         </div>
 
+        <div class="input-container experience__input-container">
+          <label :for="`techStack-${experience.id}`">tech stack</label>
+          <input
+            :id="`techStack-${experience.id}`"
+            v-model="experience.techStack"
+            type="text"
+          />
+        </div>
+
         <button
           class="button button--delete experience__button experience__button--delete"
           type="button"

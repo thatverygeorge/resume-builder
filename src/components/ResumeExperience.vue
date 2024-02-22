@@ -6,43 +6,40 @@ const experienceStore = useExperienceStore();
 
 <template>
   <section
-    v-if="Array.from(experienceStore.experience).length > 0"
-    class="experience resume__experience"
+    v-if="experienceStore.experience.size > 0"
     aria-labelledby="experience-heading"
   >
-    <h2 class="heading heading--xl experience__heading" id="experience-heading">
-      Experience
-    </h2>
-    <ul class="experience__list" role="list">
+    <h3 id="experience-heading">Experience</h3>
+    <ul>
       <li
         v-for="experience in experienceStore.experience.values()"
         :key="experience.id"
-        class="experience__item"
       >
-        <article class="experience-card experience__card">
-          <h3 class="heading heading--l experience-card__heading">
+        <article>
+          <h4>
             {{ experience.company }},
             <br />
             {{ experience.position }}
-          </h3>
-          <span class="card-dates experience-card__dates">
+          </h4>
+          <p>
             <time
               :datetime="experience.startDate.split('-').slice(0, 2).join('-')"
             >
               {{ experience.startDate.split("-").reverse().slice(1).join("/") }}
             </time>
-            -
-            <time v-if="experience.stillWorkingHere">present</time>
+            <span> - </span>
+            <span v-if="experience.stillWorkingHere">present</span>
             <time
               v-else
               :datetime="experience.endDate.split('-').slice(0, 2).join('-')"
             >
               {{ experience.endDate.split("-").reverse().slice(1).join("/") }}
             </time>
-          </span>
-          <p v-if="experience.description" class="experience-card__achievement">
+          </p>
+          <p v-if="experience.description">
             {{ experience.description }}
           </p>
+          <p>Tech stack: {{ experience.techStack }}</p>
         </article>
       </li>
     </ul>

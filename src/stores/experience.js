@@ -17,6 +17,7 @@ export const useExperienceStore = defineStore("experience", () => {
       startDate: "",
       endDate: "",
       description: "",
+      techStack: "",
       stillWorkingHere: false,
     });
   }
