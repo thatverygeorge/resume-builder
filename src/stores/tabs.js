@@ -1,4 +1,4 @@
-import { ref, shallowRef, watch } from "vue";
+import { ref, shallowRef, watchEffect } from "vue";
 import { defineStore } from "pinia";
 import BuilderAbout from "@/components/BuilderAbout.vue";
 import BuilderContacts from "@/components/BuilderContacts.vue";
@@ -28,7 +28,7 @@ export const useTabsStore = defineStore("tabs", () => {
     currentTab.value = newTab;
   }
 
-  watch(currentTab, () => {
+  watchEffect(() => {
     localStorage.setItem("lastOpenTab", currentTab.value);
   });
 

@@ -1,4 +1,4 @@
-import { ref, watch } from "vue";
+import { ref, watchEffect } from "vue";
 import { defineStore } from "pinia";
 import { nanoid } from "nanoid";
 
@@ -19,7 +19,7 @@ export const useLanguagesStore = defineStore("languages", () => {
     languages.value.delete(id);
   }
 
-  watch(languages.value, () => {
+  watchEffect(() => {
     localStorage.setItem(
       "languages",
       JSON.stringify(Array.from(languages.value))

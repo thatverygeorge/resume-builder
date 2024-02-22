@@ -1,4 +1,4 @@
-import { ref, watch } from "vue";
+import { ref, watchEffect } from "vue";
 import { defineStore } from "pinia";
 import { nanoid } from "nanoid";
 
@@ -20,7 +20,7 @@ export const useContactsStore = defineStore("contacts", () => {
     contacts.value.delete(id);
   }
 
-  watch(contacts.value, () => {
+  watchEffect(() => {
     localStorage.setItem(
       "contacts",
       JSON.stringify(Array.from(contacts.value))

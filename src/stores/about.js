@@ -1,4 +1,4 @@
-import { ref, watch } from "vue";
+import { ref, watchEffect } from "vue";
 import { defineStore } from "pinia";
 
 const INITIAL_STATE = {
@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 export const useAboutStore = defineStore("about", () => {
   const about = ref(JSON.parse(localStorage.getItem("about")) || INITIAL_STATE);
 
-  watch(about.value, () => {
+  watchEffect(() => {
     localStorage.setItem("about", JSON.stringify(about.value));
   });
 

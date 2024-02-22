@@ -1,4 +1,4 @@
-import { ref, watch } from "vue";
+import { ref, watchEffect } from "vue";
 import { defineStore } from "pinia";
 import { nanoid } from "nanoid";
 
@@ -22,7 +22,7 @@ export const useProjectsStore = defineStore("projects", () => {
     projects.value.delete(id);
   }
 
-  watch(projects.value, () => {
+  watchEffect(() => {
     localStorage.setItem(
       "projects",
       JSON.stringify(Array.from(projects.value))
