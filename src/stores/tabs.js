@@ -14,8 +14,8 @@ const TABS = {
   skills: BuilderSkills,
   languages: BuilderLanguages,
   experience: BuilderExperience,
-  education: BuilderEducation,
   projects: BuilderProjects,
+  education: BuilderEducation,
 };
 
 const DEFAULT_TAB = "about";

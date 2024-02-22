@@ -14,7 +14,9 @@ const resumeSection = ref(null);
 const aboutStore = useAboutStore();
 
 onMounted(() => {
-  document.title = `${aboutStore.about.name} — ${aboutStore.about.position}`;
+  if (aboutStore.about.name !== "" && aboutStore.about.position !== "") {
+    document.title = `${aboutStore.about.name} — ${aboutStore.about.position}`;
+  }
 
   resumeSection.value.style.setProperty(
     "--accentColor",
@@ -37,23 +39,39 @@ onUnmounted(() => {
 
     <div class="column resume__column">
       <ResumeExperience />
-      <ResumeEducation />
       <ResumeProjects />
+      <ResumeEducation />
     </div>
   </section>
 </template>
 
 <style>
 .resume {
+  --background-color: var(--white);
+
+  --h1-text-color: var(--black);
+  --h2-text-color: var(--black);
+  --h2-border-color: var(--accentColor);
+  --h3-text-color: var(--black);
+
+  --text-color: var(--black);
+
+  --link-text-color: var(--black);
+  --link-outline-color: var(--black);
+  --link-shadow-color: var(--accentColor);
+
+  --link-text-color-hover: var(--black);
+
+  --dates-color: var(--gray);
+
   font-stretch: 85%;
   display: grid;
-  grid-template-columns: 430px 1fr;
-  gap: 3rem;
+  grid-template-columns: 440px 1fr;
+  gap: 2rem;
   align-content: start;
 }
 
 .resume section,
-.resume ul,
 .resume article {
   display: flex;
   flex-wrap: wrap;
@@ -61,80 +79,66 @@ onUnmounted(() => {
   gap: 1rem;
 }
 
-.resume p,
+.resume ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0;
+  padding-left: 2rem;
+}
+
 .resume li {
   font-size: 1.5rem;
 }
 
-.resume ul {
-  list-style: initial;
-  padding-left: 20px;
+.resume h2 {
+  font-size: 2.25rem;
+  text-align: center;
+  color: var(--h1-text-color);
 }
 
-.resume li {
-  display: list-item;
+.resume h3 {
+  font-size: 2rem;
+  color: var(--h2-text-color);
+  padding-bottom: 1rem;
+  border-bottom: 0.5rem solid var(--h2-border-color);
 }
 
-.resume .link {
-  text-decoration: underline;
-  color: var(--black);
+.resume h4 {
+  font-size: 1.75rem;
+  color: var(--h3-text-color);
 }
 
-.resume .link:focus-visible {
-  outline: 2px solid var(--accentColor);
+.resume p {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.resume p:has(time) {
+  color: var(--dates-color);
+}
+
+.resume a {
+  display: inline-block;
+  color: var(--link-text-color);
+  text-shadow: 2px 2px 0 var(--link-shadow-color);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.resume a:focus-visible {
+  color: var(--link-text-color-hover);
+  text-shadow: none;
+  outline: 2px solid var(--link-outline-color);
   outline-offset: 4px;
 }
 
-.resume .link:hover {
-  text-decoration: none;
-}
-
-.resume .column {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.resume .heading {
-  margin: 0;
-}
-
-.resume .heading--2xl {
-  font-size: 2.25rem;
-  text-align: center;
-}
-
-.resume .heading--xl {
-  font-size: 2rem;
-  padding-bottom: 1rem;
-  border-bottom: 0.5rem solid var(--accentColor);
-}
-
-.resume .heading--l {
-  font-size: 1.75rem;
-}
-
-.resume .about__text,
-.resume .experience-card__achievement,
-.resume .education-card__achievement,
-.resume .project-card__description {
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.resume .skills__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-content: start;
-}
-
-.resume .card-dates {
-  color: var(--gray);
-}
-
-.resume .project-card__link {
-  display: inline-block;
+@media (hover: hover) {
+  a:hover {
+    color: var(--link-text-color-hover);
+    text-shadow: none;
+    text-decoration: underline;
+  }
 }
 
 @media (max-width: 960px) {
