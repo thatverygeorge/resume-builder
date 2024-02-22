@@ -13,7 +13,7 @@ const tabsStore = useTabsStore();
     :id="`tabpanel-${tabsStore.currentTab}`"
     :aria-labelledby="`tab-${tabsStore.currentTab}`"
   >
-    <ul v-if="Array.from(projectsStore.projects).length > 0" class="list">
+    <ul v-if="projectsStore.projects.size > 0" class="list">
       <li v-for="project in projectsStore.projects.values()" :key="project.id">
         <div class="input-container projects__input-container">
           <label :for="`name-${project.id}`">name</label>

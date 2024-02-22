@@ -13,10 +13,7 @@ const tabsStore = useTabsStore();
     :id="`tabpanel-${tabsStore.currentTab}`"
     :aria-labelledby="`tab-${tabsStore.currentTab}`"
   >
-    <ul
-      v-if="Array.from(skillsStore.skills).length > 0"
-      class="list list--three-column"
-    >
+    <ul v-if="skillsStore.skills.size > 0" class="list list--three-column">
       <li v-for="skill in skillsStore.skills.values()" :key="skill.id">
         <div class="input-container skills__input-container">
           <label :for="`label-${skill.id}`">skill</label>

@@ -13,7 +13,7 @@ const tabsStore = useTabsStore();
     :id="`tabpanel-${tabsStore.currentTab}`"
     :aria-labelledby="`tab-${tabsStore.currentTab}`"
   >
-    <ul v-if="Array.from(experienceStore.experience).length > 0" class="list">
+    <ul v-if="experienceStore.experience.size > 0" class="list">
       <li
         v-for="experience in experienceStore.experience.values()"
         :key="experience.id"

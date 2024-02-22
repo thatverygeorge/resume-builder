@@ -13,10 +13,7 @@ const tabsStore = useTabsStore();
     :id="`tabpanel-${tabsStore.currentTab}`"
     :aria-labelledby="`tab-${tabsStore.currentTab}`"
   >
-    <ul
-      v-if="Array.from(languagesStore.languages).length > 0"
-      class="list list--two-column"
-    >
+    <ul v-if="languagesStore.languages.size > 0" class="list list--two-column">
       <li
         v-for="language in languagesStore.languages.values()"
         :key="language.id"

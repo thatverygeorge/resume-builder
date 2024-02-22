@@ -13,10 +13,7 @@ const tabsStore = useTabsStore();
     :id="`tabpanel-${tabsStore.currentTab}`"
     :aria-labelledby="`tab-${tabsStore.currentTab}`"
   >
-    <ul
-      v-if="Array.from(contactsStore.contacts).length > 0"
-      class="list list--two-column"
-    >
+    <ul v-if="contactsStore.contacts.size > 0" class="list list--two-column">
       <li v-for="contact in contactsStore.contacts.values()" :key="contact.id">
         <div class="input-container contacts__input-container">
           <label :for="`label-${contact.id}`">label</label>
