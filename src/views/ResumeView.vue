@@ -85,14 +85,15 @@ onUnmounted(() => {
 }
 
 .resume ul {
+  list-style: disc;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  margin: 0;
   padding-left: 2rem;
 }
 
 .resume li {
+  display: list-item;
   font-size: 1.5rem;
 }
 

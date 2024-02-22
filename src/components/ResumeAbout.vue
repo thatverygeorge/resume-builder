@@ -19,7 +19,7 @@ const aboutStore = useAboutStore();
   </section>
 
   <section v-if="aboutStore.about.description" aria-labelledby="about-heading">
-    <h2 id="about-heading">About</h2>
+    <h3 id="about-heading">About</h3>
     <p>{{ aboutStore.about.description }}</p>
   </section>
 </template>

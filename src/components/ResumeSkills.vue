@@ -6,21 +6,30 @@ const skillsStore = useSkillsStore();
 
 <template>
   <section
-    v-if="Array.from(skillsStore.skills).length > 0"
+    v-if="skillsStore.skills.size > 0"
     class="skills resume__skills"
     aria-labelledby="skills-heading"
   >
-    <h2 class="heading heading--xl skills__heading" id="skills-heading">
-      Skills
-    </h2>
-    <ul class="skills__list" role="list">
-      <li
-        v-for="skill in skillsStore.skills.values()"
-        :key="skill.id"
-        class="skills__item"
-      >
+    <h3 id="skills-heading">Skills</h3>
+    <ul>
+      <li v-for="skill in skillsStore.skills.values()" :key="skill.id">
         {{ skill.label }}
       </li>
     </ul>
   </section>
 </template>
+
+<style scoped>
+.resume__skills ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  align-content: start;
+}
+
+@media (max-width: 480px) {
+  .resume__skills ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+</style>
