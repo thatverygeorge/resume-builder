@@ -47,12 +47,10 @@ onUnmounted(() => {
 
 <style>
 .resume {
-  --background-color: var(--white);
-
-  --h1-text-color: var(--black);
   --h2-text-color: var(--black);
-  --h2-border-color: var(--accentColor);
   --h3-text-color: var(--black);
+  --h3-border-color: var(--accentColor);
+  --h4-text-color: var(--black);
 
   --text-color: var(--black);
 
@@ -69,6 +67,13 @@ onUnmounted(() => {
   grid-template-columns: 440px 1fr;
   gap: 2rem;
   align-content: start;
+}
+
+.resume div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .resume section,
@@ -94,19 +99,19 @@ onUnmounted(() => {
 .resume h2 {
   font-size: 2.25rem;
   text-align: center;
-  color: var(--h1-text-color);
+  color: var(--h4-text-color);
 }
 
 .resume h3 {
   font-size: 2rem;
-  color: var(--h2-text-color);
+  color: var(--h4-text-color);
   padding-bottom: 1rem;
-  border-bottom: 0.5rem solid var(--h2-border-color);
+  border-bottom: 0.5rem solid var(--h3-border-color);
 }
 
 .resume h4 {
   font-size: 1.75rem;
-  color: var(--h3-text-color);
+  color: var(--h4-text-color);
 }
 
 .resume p {

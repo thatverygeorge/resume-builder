@@ -12,7 +12,7 @@ export const useContactsStore = defineStore("contacts", () => {
       id,
       label: "",
       value: "",
-      href: "",
+      url: "",
     });
   }
 

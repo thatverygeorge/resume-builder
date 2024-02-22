@@ -6,24 +6,17 @@ const contactsStore = useContactsStore();
 
 <template>
   <section
-    v-if="Array.from(contactsStore.contacts).length > 0"
+    v-if="contactsStore.contacts.size > 0"
     class="contacts resume__contacts"
     aria-labelledby="contacts-heading"
   >
-    <h2 class="heading heading--xl contacts__heading" id="contacts-heading">
-      Contacts
-    </h2>
-    <ul class="contacts__list" role="list">
-      <li
-        v-for="contact in contactsStore.contacts.values()"
-        :key="contact.id"
-        class="contacts__item"
-      >
-        <span>{{ contact.label }}: </span>
+    <h3 id="contacts-heading">Contacts</h3>
+    <ul>
+      <li v-for="contact in contactsStore.contacts.values()" :key="contact.id">
+        <span>{{ contact.label }}:</span>
         <a
-          v-if="contact.href"
-          :href="contact.href"
-          class="link contacts__link"
+          v-if="contact.url"
+          :href="contact.url"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -34,3 +27,31 @@ const contactsStore = useContactsStore();
     </ul>
   </section>
 </template>
+
+<style scoped>
+.resume__contacts li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.resume__contacts li:before {
+  content: "•";
+  position: absolute;
+  left: -1.5rem;
+  top: 0;
+}
+
+@media (max-width: 480px) {
+  .resume__contacts li {
+    flex-direction: column;
+  }
+
+  .resume__contacts li > span:nth-of-type(2),
+  .resume__contacts li > a {
+    padding-left: 1rem;
+  }
+}
+</style>
