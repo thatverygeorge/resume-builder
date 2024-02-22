@@ -69,7 +69,7 @@ onUnmounted(() => {
   align-content: start;
 }
 
-.resume div {
+.resume > div {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;

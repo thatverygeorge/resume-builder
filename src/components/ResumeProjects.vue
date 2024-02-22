@@ -6,33 +6,23 @@ const projectsStore = useProjectsStore();
 
 <template>
   <section
-    v-if="Array.from(projectsStore.projects).length > 0"
-    class="projects resume__projects"
+    v-if="projectsStore.projects.size > 0"
     aria-labelledby="projects-heading"
   >
-    <h2 class="heading heading--xl projects__heading" id="projects-heading">
-      Projects
-    </h2>
-    <ul class="projects__list" role="list">
-      <li
-        v-for="project in projectsStore.projects.values()"
-        :key="project.id"
-        class="projects__item"
-      >
-        <article class="project-card projects__card">
-          <h3 class="heading heading--l project-card__heading">
+    <h3 id="projects-heading">Projects</h3>
+    <ul>
+      <li v-for="project in projectsStore.projects.values()" :key="project.id">
+        <article>
+          <h4>
             {{ project.name }}
-          </h3>
-          <p v-if="project.description" class="project-card__description">
+          </h4>
+          <p v-if="project.description">
             {{ project.description }}
           </p>
-          <p class="project-card__tech-stack">
-            Tech stack: {{ project.techStack }}
-          </p>
+          <p>Tech stack: {{ project.techStack }}</p>
           <div>
             <a
               v-if="project.demoLink"
-              class="link project-card__link"
               :href="project.demoLink"
               target="_blank"
               rel="noopener noreferrer"
@@ -44,7 +34,6 @@ const projectsStore = useProjectsStore();
             </a>
             <span v-if="project.demoLink" aria-hidden="true"> | </span>
             <a
-              class="link project-card__link"
               :href="project.sourceCodeLink"
               target="_blank"
               rel="noopener noreferrer"
