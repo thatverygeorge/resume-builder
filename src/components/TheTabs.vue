@@ -1,19 +1,17 @@
 <script setup>
-import { useTabsStore } from "@/stores/tabs";
+import { useTabsStore } from '@/stores/tabs';
 
 const tabsStore = useTabsStore();
 
 function onKeydown({ key }) {
   const currentButton = document.activeElement;
   const nextButton =
-    key === "ArrowRight"
-      ? currentButton.nextElementSibling
-      : currentButton.previousElementSibling;
+    key === 'ArrowRight' ? currentButton.nextElementSibling : currentButton.previousElementSibling;
 
   if (nextButton) {
     nextButton.focus();
   } else {
-    key === "ArrowRight"
+    key === 'ArrowRight'
       ? currentButton.parentElement.firstElementChild.focus()
       : currentButton.parentElement.lastElementChild.focus();
   }

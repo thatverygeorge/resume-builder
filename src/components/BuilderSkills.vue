@@ -1,6 +1,6 @@
 <script setup>
-import { useSkillsStore } from "@/stores/skills";
-import { useTabsStore } from "@/stores/tabs";
+import { useSkillsStore } from '@/stores/skills';
+import { useTabsStore } from '@/stores/tabs';
 
 const skillsStore = useSkillsStore();
 const tabsStore = useTabsStore();

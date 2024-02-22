@@ -1,15 +1,11 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
   <section class="not-found" aria-labelledby="not-found-heading">
-    <h2 class="not-found__heading" id="not-found-heading">
-      404. Page not found
-    </h2>
-    <RouterLink class="not-found__link" :to="{ name: 'home' }">
-      go home
-    </RouterLink>
+    <h2 class="not-found__heading" id="not-found-heading">404. Page not found</h2>
+    <RouterLink class="not-found__link" :to="{ name: 'home' }"> go home </RouterLink>
   </section>
 </template>
 

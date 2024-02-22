@@ -1,6 +1,6 @@
 <script setup>
-import { useEducationStore } from "@/stores/education";
-import { useTabsStore } from "@/stores/tabs";
+import { useEducationStore } from '@/stores/education';
+import { useTabsStore } from '@/stores/tabs';
 
 const educationStore = useEducationStore();
 const tabsStore = useTabsStore();
@@ -14,68 +14,39 @@ const tabsStore = useTabsStore();
     :aria-labelledby="`tab-${tabsStore.currentTab}`"
   >
     <ul v-if="educationStore.education.size > 0" class="list">
-      <li
-        v-for="education in educationStore.education.values()"
-        :key="education.id"
-      >
+      <li v-for="education in educationStore.education.values()" :key="education.id">
         <div class="input-container education__input-container">
           <label :for="`academy-${education.id}`">academy</label>
-          <input
-            :id="`academy-${education.id}`"
-            v-model="education.academy"
-            type="text"
-          />
+          <input :id="`academy-${education.id}`" v-model="education.academy" type="text" />
         </div>
 
         <div class="input-container education__input-container">
           <label :for="`course-${education.id}`">course</label>
-          <input
-            :id="`course-${education.id}`"
-            v-model="education.course"
-            type="text"
-          />
+          <input :id="`course-${education.id}`" v-model="education.course" type="text" />
         </div>
 
         <div class="input-container education__input-container">
           <label :for="`start-date-${education.id}`">start date</label>
-          <input
-            :id="`start-date-${education.id}`"
-            v-model="education.startDate"
-            type="date"
-          />
+          <input :id="`start-date-${education.id}`" v-model="education.startDate" type="date" />
         </div>
 
-        <div
-          v-if="!education.stillStudyingHere"
-          class="input-container education__input-container"
-        >
+        <div v-if="!education.stillStudyingHere" class="input-container education__input-container">
           <label :for="`end-date-${education.id}`">end date</label>
-          <input
-            :id="`end-date-${education.id}`"
-            v-model="education.endDate"
-            type="date"
-          />
+          <input :id="`end-date-${education.id}`" v-model="education.endDate" type="date" />
         </div>
 
-        <div
-          class="input-container input-container--still-here education__input-container"
-        >
+        <div class="input-container input-container--still-here education__input-container">
           <input
             :id="`still-studying-${education.id}`"
             v-model="education.stillStudyingHere"
             type="checkbox"
           />
-          <label :for="`still-studying-${education.id}`">
-            still studying here?
-          </label>
+          <label :for="`still-studying-${education.id}`"> still studying here? </label>
         </div>
 
         <div class="input-container education__input-container">
           <label :for="`description-${education.id}`">description</label>
-          <textarea
-            :id="`description-${education.id}`"
-            v-model="education.description"
-          ></textarea>
+          <textarea :id="`description-${education.id}`" v-model="education.description"></textarea>
         </div>
 
         <button
@@ -84,9 +55,7 @@ const tabsStore = useTabsStore();
           @click="educationStore.deleteEducation(education.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden">
-            delete education at: {{ education.academy }}
-          </span>
+          <span class="visually-hidden"> delete education at: {{ education.academy }} </span>
         </button>
       </li>
     </ul>

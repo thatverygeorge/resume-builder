@@ -1,6 +1,6 @@
 <script setup>
-import { useProjectsStore } from "@/stores/projects";
-import { useTabsStore } from "@/stores/tabs";
+import { useProjectsStore } from '@/stores/projects';
+import { useTabsStore } from '@/stores/tabs';
 
 const projectsStore = useProjectsStore();
 const tabsStore = useTabsStore();
@@ -17,46 +17,27 @@ const tabsStore = useTabsStore();
       <li v-for="project in projectsStore.projects.values()" :key="project.id">
         <div class="input-container projects__input-container">
           <label :for="`name-${project.id}`">name</label>
-          <input
-            :id="`name-${project.id}`"
-            v-model="project.name"
-            type="text"
-          />
+          <input :id="`name-${project.id}`" v-model="project.name" type="text" />
         </div>
 
         <div class="input-container projects__input-container">
           <label :for="`description-${project.id}`">description</label>
-          <textarea
-            :id="`description-${project.id}`"
-            v-model="project.description"
-          ></textarea>
+          <textarea :id="`description-${project.id}`" v-model="project.description"></textarea>
         </div>
 
         <div class="input-container projects__input-container">
           <label :for="`tech-stack-${project.id}`">tech stack</label>
-          <input
-            :id="`tech-stack-${project.id}`"
-            v-model="project.techStack"
-            type="text"
-          />
+          <input :id="`tech-stack-${project.id}`" v-model="project.techStack" type="text" />
         </div>
 
         <div class="input-container projects__input-container">
           <label :for="`demoLink-${project.id}`">demo link</label>
-          <input
-            :id="`demoLink-${project.id}`"
-            v-model="project.demoLink"
-            type="url"
-          />
+          <input :id="`demoLink-${project.id}`" v-model="project.demoLink" type="url" />
         </div>
 
         <div class="input-container projects__input-container">
           <label :for="`sourceCodeLink-${project.id}`">source code link</label>
-          <input
-            :id="`sourceCodeLink-${project.id}`"
-            v-model="project.sourceCodeLink"
-            type="url"
-          />
+          <input :id="`sourceCodeLink-${project.id}`" v-model="project.sourceCodeLink" type="url" />
         </div>
 
         <button
@@ -65,9 +46,7 @@ const tabsStore = useTabsStore();
           @click="projectsStore.deleteProject(project.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden">
-            delete project: {{ project.name }}
-          </span>
+          <span class="visually-hidden"> delete project: {{ project.name }} </span>
         </button>
       </li>
     </ul>

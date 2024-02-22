@@ -1,5 +1,5 @@
 <script setup>
-import { useAboutStore } from "@/stores/about";
+import { useAboutStore } from '@/stores/about';
 
 const aboutStore = useAboutStore();
 </script>

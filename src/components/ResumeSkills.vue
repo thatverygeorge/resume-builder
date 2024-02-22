@@ -1,5 +1,5 @@
 <script setup>
-import { useSkillsStore } from "@/stores/skills";
+import { useSkillsStore } from '@/stores/skills';
 
 const skillsStore = useSkillsStore();
 </script>

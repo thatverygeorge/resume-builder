@@ -1,20 +1,20 @@
-import { ref, watchEffect } from "vue";
-import { defineStore } from "pinia";
-import { nanoid } from "nanoid";
+import { ref, watchEffect } from 'vue';
+import { defineStore } from 'pinia';
+import { nanoid } from 'nanoid';
 
-export const useProjectsStore = defineStore("projects", () => {
-  const projects = ref(new Map(JSON.parse(localStorage.getItem("projects"))));
+export const useProjectsStore = defineStore('projects', () => {
+  const projects = ref(new Map(JSON.parse(localStorage.getItem('projects'))));
 
   function addProject() {
     const id = nanoid();
 
     projects.value.set(id, {
       id,
-      name: "",
-      description: "",
-      techStack: "",
-      demoLink: "",
-      sourceCodeLink: "",
+      name: '',
+      description: '',
+      techStack: '',
+      demoLink: '',
+      sourceCodeLink: '',
     });
   }
 
@@ -23,10 +23,7 @@ export const useProjectsStore = defineStore("projects", () => {
   }
 
   watchEffect(() => {
-    localStorage.setItem(
-      "projects",
-      JSON.stringify(Array.from(projects.value))
-    );
+    localStorage.setItem('projects', JSON.stringify(Array.from(projects.value)));
   });
 
   return { projects, addProject, deleteProject };

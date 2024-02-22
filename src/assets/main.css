@@ -1,6 +1,6 @@
 @font-face {
   font-family: MartianMono;
-  src: url("/font/MartianMonoVF.woff2") format("woff2");
+  src: url('/font/MartianMonoVF.woff2') format('woff2');
   font-weight: 100 800;
   font-stretch: 75% 112.5%;
   font-display: swap;
@@ -105,7 +105,7 @@ li {
   gap: 1.5rem;
 }
 
-[role="tabpanel"] {
+[role='tabpanel'] {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -231,7 +231,7 @@ textarea {
 }
 
 @media (width < 560px) {
-  [role="tabpanel"] .button--primary {
+  [role='tabpanel'] .button--primary {
     max-width: 100%;
   }
 

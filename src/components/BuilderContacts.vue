@@ -1,6 +1,6 @@
 <script setup>
-import { useContactsStore } from "@/stores/contacts";
-import { useTabsStore } from "@/stores/tabs";
+import { useContactsStore } from '@/stores/contacts';
+import { useTabsStore } from '@/stores/tabs';
 
 const contactsStore = useContactsStore();
 const tabsStore = useTabsStore();
@@ -17,20 +17,12 @@ const tabsStore = useTabsStore();
       <li v-for="contact in contactsStore.contacts.values()" :key="contact.id">
         <div class="input-container contacts__input-container">
           <label :for="`label-${contact.id}`">label</label>
-          <input
-            :id="`label-${contact.id}`"
-            v-model="contact.label"
-            type="text"
-          />
+          <input :id="`label-${contact.id}`" v-model="contact.label" type="text" />
         </div>
 
         <div class="input-container contacts__input-container">
           <label :for="`value-${contact.id}`">value</label>
-          <input
-            :id="`value-${contact.id}`"
-            v-model="contact.value"
-            type="text"
-          />
+          <input :id="`value-${contact.id}`" v-model="contact.value" type="text" />
         </div>
 
         <div class="input-container contacts__input-container">
@@ -44,9 +36,7 @@ const tabsStore = useTabsStore();
           @click="contactsStore.deleteContact(contact.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden">
-            delete contact: {{ contact.label }}
-          </span>
+          <span class="visually-hidden"> delete contact: {{ contact.label }} </span>
         </button>
       </li>
     </ul>

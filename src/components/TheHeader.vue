@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink } from "vue-router";
+import { RouterLink } from 'vue-router';
 </script>
 
 <template>
@@ -11,11 +11,7 @@ import { RouterLink } from "vue-router";
 
       <span class="header__made-by">
         made by
-        <a
-          href="https://github.com/thatverygeorge"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a href="https://github.com/thatverygeorge" target="_blank" rel="noopener noreferrer">
           @thatverygeorge
         </a>
       </span>

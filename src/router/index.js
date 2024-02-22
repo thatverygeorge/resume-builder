@@ -1,25 +1,25 @@
-import { createRouter, createWebHashHistory } from "vue-router";
-import HomeView from "@/views/HomeView.vue";
-import ResumeView from "@/views/ResumeView.vue";
-import NotFoundView from "@/views/NotFoundView.vue";
+import { createRouter, createWebHashHistory } from 'vue-router';
+import HomeView from '@/views/HomeView.vue';
+import ResumeView from '@/views/ResumeView.vue';
+import NotFoundView from '@/views/NotFoundView.vue';
 
 const router = createRouter({
   history: createWebHashHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: "/",
-      name: "home",
+      path: '/',
+      name: 'home',
       component: HomeView,
-      alias: "/home",
+      alias: '/home',
     },
     {
-      path: "/resume",
-      name: "resume",
+      path: '/resume',
+      name: 'resume',
       component: ResumeView,
     },
     {
-      path: "/:pathMatch(.*)*",
-      name: "notFound",
+      path: '/:pathMatch(.*)*',
+      name: 'notFound',
       component: NotFoundView,
     },
   ],

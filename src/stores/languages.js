@@ -1,17 +1,17 @@
-import { ref, watchEffect } from "vue";
-import { defineStore } from "pinia";
-import { nanoid } from "nanoid";
+import { ref, watchEffect } from 'vue';
+import { defineStore } from 'pinia';
+import { nanoid } from 'nanoid';
 
-export const useLanguagesStore = defineStore("languages", () => {
-  const languages = ref(new Map(JSON.parse(localStorage.getItem("languages"))));
+export const useLanguagesStore = defineStore('languages', () => {
+  const languages = ref(new Map(JSON.parse(localStorage.getItem('languages'))));
 
   function addLanguage() {
     const id = nanoid();
 
     languages.value.set(id, {
       id,
-      label: "",
-      value: "",
+      label: '',
+      value: '',
     });
   }
 
@@ -20,10 +20,7 @@ export const useLanguagesStore = defineStore("languages", () => {
   }
 
   watchEffect(() => {
-    localStorage.setItem(
-      "languages",
-      JSON.stringify(Array.from(languages.value))
-    );
+    localStorage.setItem('languages', JSON.stringify(Array.from(languages.value)));
   });
 
   return { languages, addLanguage, deleteLanguage };

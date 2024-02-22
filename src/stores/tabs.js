@@ -1,12 +1,12 @@
-import { ref, shallowRef, watchEffect } from "vue";
-import { defineStore } from "pinia";
-import BuilderAbout from "@/components/BuilderAbout.vue";
-import BuilderContacts from "@/components/BuilderContacts.vue";
-import BuilderSkills from "@/components/BuilderSkills.vue";
-import BuilderLanguages from "@/components/BuilderLanguages.vue";
-import BuilderExperience from "@/components/BuilderExperience.vue";
-import BuilderEducation from "@/components/BuilderEducation.vue";
-import BuilderProjects from "@/components/BuilderProjects.vue";
+import { ref, shallowRef, watchEffect } from 'vue';
+import { defineStore } from 'pinia';
+import BuilderAbout from '@/components/BuilderAbout.vue';
+import BuilderContacts from '@/components/BuilderContacts.vue';
+import BuilderSkills from '@/components/BuilderSkills.vue';
+import BuilderLanguages from '@/components/BuilderLanguages.vue';
+import BuilderExperience from '@/components/BuilderExperience.vue';
+import BuilderEducation from '@/components/BuilderEducation.vue';
+import BuilderProjects from '@/components/BuilderProjects.vue';
 
 const TABS = {
   about: BuilderAbout,
@@ -18,18 +18,18 @@ const TABS = {
   education: BuilderEducation,
 };
 
-const DEFAULT_TAB = "about";
+const DEFAULT_TAB = 'about';
 
-export const useTabsStore = defineStore("tabs", () => {
+export const useTabsStore = defineStore('tabs', () => {
   const tabs = shallowRef(TABS);
-  const currentTab = ref(localStorage.getItem("lastOpenTab") || DEFAULT_TAB);
+  const currentTab = ref(localStorage.getItem('lastOpenTab') || DEFAULT_TAB);
 
   function changeTab(newTab) {
     currentTab.value = newTab;
   }
 
   watchEffect(() => {
-    localStorage.setItem("lastOpenTab", currentTab.value);
+    localStorage.setItem('lastOpenTab', currentTab.value);
   });
 
   return { tabs, currentTab, changeTab };

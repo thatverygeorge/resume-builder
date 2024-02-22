@@ -1,14 +1,11 @@
 <script setup>
-import { useProjectsStore } from "@/stores/projects";
+import { useProjectsStore } from '@/stores/projects';
 
 const projectsStore = useProjectsStore();
 </script>
 
 <template>
-  <section
-    v-if="projectsStore.projects.size > 0"
-    aria-labelledby="projects-heading"
-  >
+  <section v-if="projectsStore.projects.size > 0" aria-labelledby="projects-heading">
     <h3 id="projects-heading">Projects</h3>
     <ul>
       <li v-for="project in projectsStore.projects.values()" :key="project.id">
@@ -33,16 +30,10 @@ const projectsStore = useProjectsStore();
               </span>
             </a>
             <span v-if="project.demoLink" aria-hidden="true"> | </span>
-            <a
-              :href="project.sourceCodeLink"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <a :href="project.sourceCodeLink" target="_blank" rel="noopener noreferrer">
               <span aria-hidden="true">Source</span>
               <span class="visually-hidden">
-                {{
-                  `Source code of the ${project.name} project. Opens in a new tab.`
-                }}
+                {{ `Source code of the ${project.name} project. Opens in a new tab.` }}
               </span>
             </a>
           </div>

@@ -1,5 +1,5 @@
 <script setup>
-import { useContactsStore } from "@/stores/contacts";
+import { useContactsStore } from '@/stores/contacts';
 
 const contactsStore = useContactsStore();
 </script>
@@ -14,12 +14,7 @@ const contactsStore = useContactsStore();
     <ul>
       <li v-for="contact in contactsStore.contacts.values()" :key="contact.id">
         <span>{{ contact.label }}:</span>
-        <a
-          v-if="contact.url"
-          :href="contact.url"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
+        <a v-if="contact.url" :href="contact.url" target="_blank" rel="noopener noreferrer">
           <span>{{ contact.value }}</span>
         </a>
         <span v-else>{{ contact.value }}</span>
@@ -38,7 +33,7 @@ const contactsStore = useContactsStore();
 }
 
 .resume__contacts li:before {
-  content: "•";
+  content: '•';
   position: absolute;
   left: -1.5rem;
   top: 0;

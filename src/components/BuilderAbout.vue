@@ -1,6 +1,6 @@
 <script setup>
-import { useAboutStore } from "@/stores/about";
-import { useTabsStore } from "@/stores/tabs";
+import { useAboutStore } from '@/stores/about';
+import { useTabsStore } from '@/stores/tabs';
 
 const aboutStore = useAboutStore();
 const tabsStore = useTabsStore();
@@ -30,10 +30,7 @@ const tabsStore = useTabsStore();
 
     <div class="input-container about__input-container">
       <label for="description">description</label>
-      <textarea
-        id="description"
-        v-model="aboutStore.about.description"
-      ></textarea>
+      <textarea id="description" v-model="aboutStore.about.description"></textarea>
     </div>
 
     <div class="input-container about__input-container">

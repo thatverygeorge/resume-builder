@@ -1,20 +1,20 @@
-import { ref, watchEffect } from "vue";
-import { defineStore } from "pinia";
-import { nanoid } from "nanoid";
+import { ref, watchEffect } from 'vue';
+import { defineStore } from 'pinia';
+import { nanoid } from 'nanoid';
 
-export const useEducationStore = defineStore("education", () => {
-  const education = ref(new Map(JSON.parse(localStorage.getItem("education"))));
+export const useEducationStore = defineStore('education', () => {
+  const education = ref(new Map(JSON.parse(localStorage.getItem('education'))));
 
   function addEducation() {
     const id = nanoid();
 
     education.value.set(id, {
       id,
-      academy: "",
-      course: "",
-      startDate: "",
-      endDate: "",
-      description: "",
+      academy: '',
+      course: '',
+      startDate: '',
+      endDate: '',
+      description: '',
       stillStudyingHere: false,
     });
   }
@@ -24,10 +24,7 @@ export const useEducationStore = defineStore("education", () => {
   }
 
   watchEffect(() => {
-    localStorage.setItem(
-      "education",
-      JSON.stringify(Array.from(education.value))
-    );
+    localStorage.setItem('education', JSON.stringify(Array.from(education.value)));
   });
 
   return { education, addEducation, deleteEducation };

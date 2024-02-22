@@ -1,20 +1,14 @@
 <script setup>
-import { useEducationStore } from "@/stores/education";
+import { useEducationStore } from '@/stores/education';
 
 const educationStore = useEducationStore();
 </script>
 
 <template>
-  <section
-    v-if="educationStore.education.size > 0"
-    aria-labelledby="education-heading"
-  >
+  <section v-if="educationStore.education.size > 0" aria-labelledby="education-heading">
     <h3>Education</h3>
     <ul>
-      <li
-        v-for="education in educationStore.education.values()"
-        :key="education.id"
-      >
+      <li v-for="education in educationStore.education.values()" :key="education.id">
         <article>
           <h4>
             {{ education.academy }},
@@ -22,18 +16,13 @@ const educationStore = useEducationStore();
             {{ education.course }}
           </h4>
           <p>
-            <time
-              :datetime="education.startDate.split('-').slice(0, 2).join('-')"
-            >
-              {{ education.startDate.split("-").reverse().slice(1).join("/") }}
+            <time :datetime="education.startDate.split('-').slice(0, 2).join('-')">
+              {{ education.startDate.split('-').reverse().slice(1).join('/') }}
             </time>
             <span> - </span>
             <span v-if="education.stillStudyingHere">present</span>
-            <time
-              v-else
-              :datetime="education.endDate.split('-').slice(0, 2).join('-')"
-            >
-              {{ education.endDate.split("-").reverse().slice(1).join("/") }}
+            <time v-else :datetime="education.endDate.split('-').slice(0, 2).join('-')">
+              {{ education.endDate.split('-').reverse().slice(1).join('/') }}
             </time>
           </p>
           <p v-if="education.description">
