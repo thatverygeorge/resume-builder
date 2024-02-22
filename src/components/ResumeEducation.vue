@@ -6,41 +6,37 @@ const educationStore = useEducationStore();
 
 <template>
   <section
-    v-if="Array.from(educationStore.education).length > 0"
-    class="education resume__education"
+    v-if="educationStore.education.size > 0"
     aria-labelledby="education-heading"
   >
-    <h2 class="heading heading--xl education__heading" id="education-heading">
-      Education
-    </h2>
-    <ul class="education__list" role="list">
+    <h3>Education</h3>
+    <ul>
       <li
         v-for="education in educationStore.education.values()"
         :key="education.id"
-        class="education__item"
       >
-        <article class="education-card education__card">
-          <h3 class="heading heading--l education-card__heading">
+        <article>
+          <h4>
             {{ education.academy }},
             <br />
             {{ education.course }}
-          </h3>
-          <span class="card-dates education-card__dates">
+          </h4>
+          <p>
             <time
               :datetime="education.startDate.split('-').slice(0, 2).join('-')"
             >
               {{ education.startDate.split("-").reverse().slice(1).join("/") }}
             </time>
-            -
-            <time v-if="education.stillStudyingHere">present</time>
+            <span> - </span>
+            <span v-if="education.stillStudyingHere">present</span>
             <time
               v-else
               :datetime="education.endDate.split('-').slice(0, 2).join('-')"
             >
               {{ education.endDate.split("-").reverse().slice(1).join("/") }}
             </time>
-          </span>
-          <p v-if="education.description" class="education-card__achievement">
+          </p>
+          <p v-if="education.description">
             {{ education.description }}
           </p>
         </article>

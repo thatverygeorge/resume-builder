@@ -76,7 +76,7 @@ function onKeydown({ key }) {
   }
 }
 
-@media (max-width: 560px) {
+@media (width < 560px) {
   .tabs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

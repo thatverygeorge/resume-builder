@@ -69,7 +69,7 @@ onUnmounted(() => {
   align-content: start;
 }
 
-.resume > div {
+.resume__column {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -147,15 +147,9 @@ onUnmounted(() => {
   }
 }
 
-@media (max-width: 960px) {
+@media (width < 960px) {
   .resume {
     grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 560px) {
-  .resume .skills__list {
-    grid-template-columns: repeat(2, 1fr);
   }
 }
 </style>

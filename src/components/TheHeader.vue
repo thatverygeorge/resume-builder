@@ -57,7 +57,7 @@ import { RouterLink } from "vue-router";
   color: inherit;
 }
 
-@media (max-width: 960px) {
+@media (width < 960px) {
   .header__heading {
     font-size: 3rem;
   }

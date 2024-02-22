@@ -27,7 +27,7 @@ const skillsStore = useSkillsStore();
   align-content: start;
 }
 
-@media (max-width: 480px) {
+@media (width < 480px) {
   .resume__skills ul {
     grid-template-columns: repeat(2, 1fr);
   }

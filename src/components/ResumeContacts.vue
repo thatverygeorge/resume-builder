@@ -44,7 +44,7 @@ const contactsStore = useContactsStore();
   top: 0;
 }
 
-@media (max-width: 480px) {
+@media (width < 480px) {
   .resume__contacts li {
     flex-direction: column;
   }

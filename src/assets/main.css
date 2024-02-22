@@ -219,7 +219,7 @@ textarea {
   }
 }
 
-@media (max-width: 960px) {
+@media (width < 960px) {
   .container {
     padding-left: 1rem;
     padding-right: 1rem;
@@ -230,7 +230,7 @@ textarea {
   }
 }
 
-@media (max-width: 560px) {
+@media (width < 560px) {
   [role="tabpanel"] .button--primary {
     max-width: 100%;
   }
@@ -242,11 +242,6 @@ textarea {
 }
 
 @media print {
-  html {
-    font-family: Helvetica, sans-serif;
-    font-size: 11px;
-  }
-
   .container.main__container {
     padding: 0;
   }
