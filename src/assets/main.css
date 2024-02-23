@@ -38,6 +38,12 @@ body {
   margin: 0;
 }
 
+#app {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -55,8 +61,7 @@ body {
   min-width: 32rem;
   max-width: 104rem;
   margin: 0 auto;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  padding: 1rem;
 }
 
 h1,
@@ -220,11 +225,6 @@ textarea {
 }
 
 @media (width < 960px) {
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
   .list--three-column {
     grid-template-columns: repeat(2, 1fr);
   }

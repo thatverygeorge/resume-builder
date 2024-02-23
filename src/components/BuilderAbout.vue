@@ -35,12 +35,7 @@ const tabsStore = useTabsStore();
 
     <div class="input-container about__input-container">
       <label for="accentColor">accent color</label>
-      <input
-        id="accentColor"
-        v-model="aboutStore.about.accentColor"
-        type="color"
-        placeholder="title"
-      />
+      <input id="accentColor" v-model="aboutStore.about.accentColor" type="color" />
     </div>
   </section>
 </template>

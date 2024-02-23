@@ -1,6 +1,9 @@
 <script setup>
 import { RouterView } from 'vue-router';
-import TheHeader from './components/TheHeader.vue';
+
+import TheHeader from '@/components/TheHeader.vue';
+
+import TheFooter from '@/components/TheFooter.vue';
 
 function print() {
   window.print();
@@ -42,16 +45,19 @@ function print() {
       <RouterView />
     </div>
   </main>
+
+  <TheFooter />
 </template>
 
 <style scoped>
 .main__container {
-  padding-top: 5rem;
+  padding-top: 4rem;
   padding-bottom: 4rem;
+  height: 100%;
   display: grid;
   grid-template-columns: 1fr;
   align-content: start;
-  gap: 3rem;
+  gap: 2rem;
   position: relative;
 }
 
