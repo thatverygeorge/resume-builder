@@ -12,7 +12,7 @@ const INITIAL_STATE = {
 export const useAboutStore = defineStore('about', () => {
   const about = ref(JSON.parse(localStorage.getItem('about')) || INITIAL_STATE);
 
-  function setAccentColor() {
+  function setCurrentAccentColor() {
     document.documentElement.style.setProperty('--accentColor', about.value.accentColor);
   }
 
@@ -24,5 +24,5 @@ export const useAboutStore = defineStore('about', () => {
     document.documentElement.style.setProperty('--accentColor', about.value.accentColor);
   });
 
-  return { about, setAccentColor };
+  return { about, setCurrentAccentColor };
 });

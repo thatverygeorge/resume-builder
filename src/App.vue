@@ -2,10 +2,10 @@
 import { RouterView } from 'vue-router';
 import TheHeader from '@/components/TheHeader.vue';
 import TheFooter from '@/components/TheFooter.vue';
-import { useAboutStore } from './stores/about';
+import { useAboutStore } from '@/stores/about';
 
 const aboutStore = useAboutStore();
-aboutStore.setAccentColor();
+aboutStore.setCurrentAccentColor();
 
 function print() {
   window.print();

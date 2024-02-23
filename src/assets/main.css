@@ -15,8 +15,6 @@
   --green: #0cb877;
   --blue: #152cfe;
   --gray: #f3f3f3c5;
-
-  --accentColor: var(--yellow);
 }
 
 *,
@@ -241,6 +239,7 @@ textarea {
   }
 
   .header,
+  .footer,
   .main__button--go-back,
   .main__button--build-resume,
   .main__button--print {
