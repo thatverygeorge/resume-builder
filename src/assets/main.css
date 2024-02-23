@@ -91,19 +91,10 @@ ul {
   gap: 2rem;
 }
 
-.list--two-column,
-.list--three-column {
-  display: grid;
-  align-content: start;
-  gap: 1.5rem;
-}
-
 .list--two-column {
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
-}
-
-.list--three-column {
-  grid-template-columns: repeat(3, 1fr);
+  align-content: start;
 }
 
 li {
@@ -137,6 +128,7 @@ label {
 
 input,
 textarea {
+  width: 100%;
   padding: 1rem;
   border: 2px solid var(--green);
   border-radius: 5px;

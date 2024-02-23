@@ -7,7 +7,7 @@ const skillsStore = useSkillsStore();
 <template>
   <section
     v-if="skillsStore.skills.size > 0"
-    class="skills resume__skills"
+    class="resume__skills"
     aria-labelledby="skills-heading"
   >
     <h3 id="skills-heading">Skills</h3>
