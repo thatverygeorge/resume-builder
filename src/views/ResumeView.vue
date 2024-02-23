@@ -113,10 +113,6 @@ onUnmounted(() => {
   font-size: 1.5rem;
 }
 
-.resume p:has(time) {
-  color: var(--dates-color);
-}
-
 .resume a {
   display: inline-block;
   color: var(--link-text-color);

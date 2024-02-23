@@ -126,7 +126,7 @@ label {
   font-size: 1.5rem;
 }
 
-input,
+input:not([type='checkbox']),
 textarea {
   width: 100%;
   padding: 1rem;
