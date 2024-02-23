@@ -1,9 +1,11 @@
 <script setup>
 import { RouterView } from 'vue-router';
-
 import TheHeader from '@/components/TheHeader.vue';
-
 import TheFooter from '@/components/TheFooter.vue';
+import { useAboutStore } from './stores/about';
+
+const aboutStore = useAboutStore();
+aboutStore.setAccentColor();
 
 function print() {
   window.print();

@@ -7,7 +7,7 @@ const contactsStore = useContactsStore();
 <template>
   <section
     v-if="contactsStore.contacts.size > 0"
-    class="contacts resume__contacts"
+    class="resume__contacts"
     aria-labelledby="contacts-heading"
   >
     <h3 id="contacts-heading">Contacts</h3>

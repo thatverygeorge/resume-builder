@@ -70,7 +70,6 @@ const tabsStore = useTabsStore();
   position: sticky;
   top: 2rem;
 }
-
 .about__preview h2 {
   text-align: start;
   border-bottom: 2px solid var(--black);
@@ -84,7 +83,6 @@ const tabsStore = useTabsStore();
   .about__preview {
     order: 0;
     position: initial;
-    top: 0;
   }
 
   .about__builder {
