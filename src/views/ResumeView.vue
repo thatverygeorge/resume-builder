@@ -1,5 +1,5 @@
 <script setup>
-import { ref, onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 import { useAboutStore } from '@/stores/about';
 import ResumeAbout from '@/components/ResumeAbout.vue';
 import ResumeContacts from '@/components/ResumeContacts.vue';
@@ -9,16 +9,12 @@ import ResumeExperience from '@/components/ResumeExperience.vue';
 import ResumeEducation from '@/components/ResumeEducation.vue';
 import ResumeProjects from '@/components/ResumeProjects.vue';
 
-const resumeSection = ref(null);
-
 const aboutStore = useAboutStore();
 
 onMounted(() => {
   if (aboutStore.about.name !== '' && aboutStore.about.position !== '') {
     document.title = `${aboutStore.about.name} — ${aboutStore.about.position}`;
   }
-
-  resumeSection.value.style.setProperty('--accentColor', aboutStore.about.accentColor);
 });
 
 onUnmounted(() => {
@@ -26,7 +22,7 @@ onUnmounted(() => {
 });
 </script>
 <template>
-  <section class="resume" ref="resumeSection">
+  <section class="resume">
     <div class="column resume__column">
       <ResumeAbout />
       <ResumeContacts />

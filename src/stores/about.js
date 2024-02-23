@@ -16,5 +16,9 @@ export const useAboutStore = defineStore('about', () => {
     localStorage.setItem('about', JSON.stringify(about.value));
   });
 
+  watchEffect(() => {
+    document.documentElement.style.setProperty('--accentColor', about.value.accentColor);
+  });
+
   return { about };
 });
