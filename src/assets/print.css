@@ -1,0 +1,12 @@
+@media print {
+  .main,
+  .container {
+    padding: 0;
+  }
+
+  header,
+  footer,
+  .main__button {
+    display: none;
+  }
+}

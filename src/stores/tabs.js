@@ -8,14 +8,22 @@ import BuilderExperience from '@/components/BuilderExperience.vue';
 import BuilderEducation from '@/components/BuilderEducation.vue';
 import BuilderProjects from '@/components/BuilderProjects.vue';
 
+import ResumeAbout from '@/components/ResumeAbout.vue';
+import ResumeContacts from '@/components/ResumeContacts.vue';
+import ResumeSkills from '@/components/ResumeSkills.vue';
+import ResumeLanguages from '@/components/ResumeLanguages.vue';
+import ResumeExperience from '@/components/ResumeExperience.vue';
+import ResumeProjects from '@/components/ResumeProjects.vue';
+import ResumeEducation from '@/components/ResumeEducation.vue';
+
 const TABS = {
-  about: BuilderAbout,
-  contacts: BuilderContacts,
-  skills: BuilderSkills,
-  languages: BuilderLanguages,
-  experience: BuilderExperience,
-  projects: BuilderProjects,
-  education: BuilderEducation,
+  about: [BuilderAbout, ResumeAbout],
+  contacts: [BuilderContacts, ResumeContacts],
+  skills: [BuilderSkills, ResumeSkills],
+  languages: [BuilderLanguages, ResumeLanguages],
+  experience: [BuilderExperience, ResumeExperience],
+  projects: [BuilderProjects, ResumeProjects],
+  education: [BuilderEducation, ResumeEducation],
 };
 
 const DEFAULT_TAB = 'about';

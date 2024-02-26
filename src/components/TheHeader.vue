@@ -3,9 +3,9 @@ import { RouterLink } from 'vue-router';
 </script>
 
 <template>
-  <header class="header">
-    <div class="container header__container">
-      <h1 class="header__heading">
+  <header>
+    <div class="container">
+      <h1>
         <RouterLink :to="{ name: 'home' }">Resume Builder</RouterLink>
       </h1>
     </div>
@@ -13,11 +13,11 @@ import { RouterLink } from 'vue-router';
 </template>
 
 <style scoped>
-.header {
+header {
   background-color: var(--green);
 }
 
-.header__container {
+header .container {
   min-height: 10rem;
   display: flex;
   flex-direction: column;
@@ -25,13 +25,13 @@ import { RouterLink } from 'vue-router';
   gap: 2rem;
 }
 
-.header__heading {
+header h1 {
   text-align: center;
   font-size: 3rem;
   color: var(--white);
 }
 
-.header__heading a {
+header a {
   color: inherit;
 }
 </style>

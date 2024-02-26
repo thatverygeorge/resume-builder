@@ -15,67 +15,62 @@ function print() {
 <template>
   <TheHeader />
 
-  <main class="main">
-    <div class="container main__container">
-      <button
-        v-if="$route.name !== 'home'"
-        class="button button--primary main__button main__button--go-back"
-        type="button"
-        @click="$router.back"
-      >
-        go back
-      </button>
+  <main class="main container">
+    <button
+      v-if="$route.name !== 'home'"
+      class="button button--primary main__button main__button--go-back"
+      type="button"
+      @click="$router.back"
+    >
+      go back
+    </button>
 
-      <button
-        v-if="$route.name === 'home'"
-        class="button button--primary main__button main__button--build-resume"
-        type="button"
-        @click="$router.push({ name: 'resume' })"
-      >
-        build resume
-      </button>
+    <button
+      v-if="$route.name === 'home'"
+      class="button button--primary main__button main__button--build-resume"
+      type="button"
+      @click="$router.push({ name: 'resume' })"
+    >
+      build resume
+    </button>
 
-      <button
-        v-if="$route.name === 'resume'"
-        class="button button--primary main__button main__button--print"
-        type="button"
-        @click="print"
-      >
-        print
-      </button>
+    <button
+      v-if="$route.name === 'resume'"
+      class="button button--primary main__button main__button--print"
+      type="button"
+      @click="print"
+    >
+      print
+    </button>
 
-      <RouterView />
-    </div>
+    <RouterView />
   </main>
 
   <TheFooter />
 </template>
 
 <style scoped>
-.main__container {
+.main {
   padding-top: 4rem;
   padding-bottom: 4rem;
   height: 100%;
   display: grid;
-  grid-template-columns: 1fr;
   align-content: start;
   gap: 2rem;
   position: relative;
 }
 
-.main__button--go-back,
-.main__button--build-resume,
-.main__button--print {
+.main__button {
   position: absolute;
   transform: translateY(-50%);
 }
 
 .main__button--go-back {
-  left: 2rem;
+  left: 1rem;
 }
 
 .main__button--build-resume,
 .main__button--print {
-  right: 2rem;
+  right: 1rem;
 }
 </style>

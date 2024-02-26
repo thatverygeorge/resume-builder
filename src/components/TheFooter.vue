@@ -1,7 +1,7 @@
 <template>
-  <footer class="footer">
-    <div class="container footer__container">
-      <h2 class="footer__heading">
+  <footer>
+    <div class="container">
+      <h2>
         made by
         <a href="https://github.com/thatverygeorge" target="_blank" rel="noopener noreferrer">
           @thatverygeorge
@@ -12,11 +12,11 @@
 </template>
 
 <style scoped>
-.footer {
+footer {
   background-color: var(--green);
 }
 
-.footer__container {
+footer .container {
   min-height: 10rem;
   display: flex;
   flex-direction: column;
@@ -24,13 +24,13 @@
   gap: 2rem;
 }
 
-.footer__heading {
+footer h2 {
   text-align: end;
   font-size: 2rem;
   color: var(--white);
 }
 
-.footer__heading a {
+footer a {
   color: inherit;
 }
 </style>

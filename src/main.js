@@ -5,6 +5,9 @@ import App from './App.vue';
 import router from './router';
 
 import './assets/main.css';
+import './assets/builder.css';
+import './assets/resume.css';
+import './assets/print.css';
 
 const app = createApp(App);
 
