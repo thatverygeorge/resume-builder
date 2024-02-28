@@ -40,7 +40,7 @@ const tabsStore = useTabsStore();
             v-model="experience.stillWorkingHere"
             type="checkbox"
           />
-          <label :for="`still-working-${experience.id}`"> still working here? </label>
+          <label :for="`still-working-${experience.id}`">still working here</label>
         </div>
 
         <div class="input-container">
@@ -62,7 +62,7 @@ const tabsStore = useTabsStore();
           @click="experienceStore.deleteExperience(experience.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden"> delete experience at: {{ experience.company }} </span>
+          <span class="visually-hidden">delete experience at: {{ experience.company }}</span>
         </button>
       </li>
     </ul>

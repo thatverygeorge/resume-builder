@@ -40,7 +40,7 @@ const tabsStore = useTabsStore();
             v-model="education.stillStudyingHere"
             type="checkbox"
           />
-          <label :for="`still-studying-${education.id}`"> still studying here? </label>
+          <label :for="`still-studying-${education.id}`">still studying here</label>
         </div>
 
         <div class="input-container">
@@ -54,7 +54,7 @@ const tabsStore = useTabsStore();
           @click="educationStore.deleteEducation(education.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden"> delete education at: {{ education.academy }} </span>
+          <span class="visually-hidden">delete education at: {{ education.academy }}</span>
         </button>
       </li>
     </ul>

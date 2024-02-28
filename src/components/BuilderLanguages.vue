@@ -30,7 +30,7 @@ const tabsStore = useTabsStore();
           @click="languagesStore.deleteLanguage(language.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden"> delete language: {{ language.label }} </span>
+          <span class="visually-hidden">delete language: {{ language.label }}</span>
         </button>
       </li>
     </ul>

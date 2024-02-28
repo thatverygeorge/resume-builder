@@ -45,7 +45,7 @@ const tabsStore = useTabsStore();
           @click="projectsStore.deleteProject(project.id)"
         >
           <span aria-hidden="true">delete</span>
-          <span class="visually-hidden"> delete project: {{ project.name }} </span>
+          <span class="visually-hidden">delete project: {{ project.name }}</span>
         </button>
       </li>
     </ul>
