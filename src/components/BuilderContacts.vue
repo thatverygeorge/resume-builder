@@ -1,6 +1,7 @@
 <script setup>
 import { useContactsStore } from '@/stores/contacts';
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const contactsStore = useContactsStore();
 const tabsStore = useTabsStore();
@@ -29,23 +30,24 @@ const tabsStore = useTabsStore();
           <input :id="`link-${contact.id}`" v-model="contact.url" type="url" />
         </div>
 
-        <button
+        <TheButton class="button--delete" @click="contactsStore.deleteContact(contact.id)">
+          <span aria-hidden="true">delete</span>
+          <span class="visually-hidden">delete contact: {{ contact.label }}</span>
+        </TheButton>
+
+        <!-- <button
           class="button button--delete"
           type="button"
           @click="contactsStore.deleteContact(contact.id)"
         >
           <span aria-hidden="true">delete</span>
           <span class="visually-hidden">delete contact: {{ contact.label }}</span>
-        </button>
+        </button> -->
       </li>
     </ul>
 
-    <button
-      class="button button--primary button--add"
-      type="button"
-      @click="contactsStore.addContact"
-    >
+    <TheButton class="button--add" v-btn-primary @click="contactsStore.addContact">
       add contact
-    </button>
+    </TheButton>
   </section>
 </template>

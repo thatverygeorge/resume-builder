@@ -1,6 +1,7 @@
 <script setup>
 import { useSkillsStore } from '@/stores/skills';
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const skillsStore = useSkillsStore();
 const tabsStore = useTabsStore();
@@ -19,19 +20,15 @@ const tabsStore = useTabsStore();
           <input :id="`label-${skill.id}`" v-model="skill.label" type="text" />
         </div>
 
-        <button
-          class="button button--delete"
-          type="button"
-          @click="skillsStore.deleteSkill(skill.id)"
-        >
+        <TheButton class="button--delete" @click="skillsStore.deleteSkill(skill.id)">
           <span aria-hidden="true">delete</span>
           <span class="visually-hidden">delete skill: {{ skill.label }}</span>
-        </button>
+        </TheButton>
       </li>
     </ul>
 
-    <button class="button button--primary button--add" type="button" @click="skillsStore.addSkill">
+    <TheButton class="button--add" v-btn-primary @click="skillsStore.addSkill">
       add skill
-    </button>
+    </TheButton>
   </section>
 </template>

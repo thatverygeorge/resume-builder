@@ -1,3 +1,29 @@
+.builder {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 2rem;
+  align-items: start;
+
+  .preview {
+    position: sticky;
+    top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    align-content: start;
+
+    padding: 1rem;
+    border-radius: 0.5rem;
+    border: 1px dashed var(--black);
+  }
+}
+
+.builder--experience,
+.builder--projects,
+.builder--education {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 [role='tabpanel'] {
   display: flex;
   flex-direction: column;
@@ -25,7 +51,7 @@
 
     padding: 1rem;
     border-radius: 0.5rem;
-    border: 1px dotted var(--black);
+    border: 1px solid var(--black);
   }
 
   label {
@@ -93,42 +119,13 @@
   }
 }
 
-.builder {
-  display: grid;
-  grid-template-columns: 1fr 440px;
-  gap: 2rem;
-  align-items: start;
-
-  .preview {
-    position: sticky;
-    top: 2rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    align-content: start;
-  }
-
-  .preview > h2 {
-    text-align: start;
-    text-transform: uppercase;
-  }
-
-  .preview > section {
-    padding: 1rem;
-    border-radius: 0.5rem;
-    border: 1px dashed var(--black);
-  }
-}
-
-.builder--experience,
-.builder--projects,
-.builder--education {
-  grid-template-columns: repeat(2, 1fr);
-}
-
 @media (width < 960px) {
   .builder {
     grid-template-columns: 1fr;
+
+    .preview {
+      position: static;
+    }
   }
 }
 
@@ -145,6 +142,7 @@
     .button--delete:hover {
       background-color: var(--red);
       color: var(--white);
+      border-color: var(--red);
     }
   }
 }

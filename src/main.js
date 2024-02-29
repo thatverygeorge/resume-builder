@@ -13,5 +13,7 @@ const app = createApp(App);
 
 app.use(createPinia());
 app.use(router);
-
+app.directive('btn-primary', (el) => {
+  el.classList.add('button--primary');
+});
 app.mount('#app');

@@ -1,6 +1,7 @@
 <script setup>
 import { useLanguagesStore } from '@/stores/languages';
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const languagesStore = useLanguagesStore();
 const tabsStore = useTabsStore();
@@ -24,23 +25,15 @@ const tabsStore = useTabsStore();
           <input :id="`value-${language.id}`" v-model="language.value" type="text" />
         </div>
 
-        <button
-          class="button button--delete"
-          type="button"
-          @click="languagesStore.deleteLanguage(language.id)"
-        >
+        <TheButton class="button--delete" @click="languagesStore.deleteLanguage(language.id)">
           <span aria-hidden="true">delete</span>
           <span class="visually-hidden">delete language: {{ language.label }}</span>
-        </button>
+        </TheButton>
       </li>
     </ul>
 
-    <button
-      class="button button--primary button--add"
-      type="button"
-      @click="languagesStore.addLanguage"
-    >
+    <TheButton class="button--add" v-btn-primary @click="languagesStore.addLanguage">
       add language
-    </button>
+    </TheButton>
   </section>
 </template>

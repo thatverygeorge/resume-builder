@@ -1,5 +1,6 @@
 <script setup>
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const tabsStore = useTabsStore();
 
@@ -26,20 +27,21 @@ function onKeydown({ key }) {
     @keydown.left="onKeydown"
     @keydown.right="onKeydown"
   >
-    <button
+    <TheButton
       v-for="(_, tab) in tabsStore.tabs"
       :key="tab"
-      class="button button--primary tabs__button"
+      class="tabs__button"
       :class="{ 'tabs__button--active': tabsStore.currentTab === tab }"
-      @click="tabsStore.changeTab(tab)"
       role="tab"
       :id="`tab-${tab}`"
       :aria-selected="tabsStore.currentTab === tab"
       :aria-controls="`tabpanel-${tab}`"
       :tabindex="tabsStore.currentTab === tab ? 0 : -1"
+      v-btn-primary
+      @click="tabsStore.changeTab(tab)"
     >
       {{ tab }}
-    </button>
+    </TheButton>
   </section>
 </template>
 

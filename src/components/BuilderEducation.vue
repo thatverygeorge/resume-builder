@@ -1,6 +1,7 @@
 <script setup>
 import { useEducationStore } from '@/stores/education';
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const educationStore = useEducationStore();
 const tabsStore = useTabsStore();
@@ -48,23 +49,15 @@ const tabsStore = useTabsStore();
           <textarea :id="`description-${education.id}`" v-model="education.description"></textarea>
         </div>
 
-        <button
-          class="button button--delete"
-          type="button"
-          @click="educationStore.deleteEducation(education.id)"
-        >
+        <TheButton class="button--delete" @click="educationStore.deleteEducation(education.id)">
           <span aria-hidden="true">delete</span>
           <span class="visually-hidden">delete education at: {{ education.academy }}</span>
-        </button>
+        </TheButton>
       </li>
     </ul>
 
-    <button
-      class="button button--primary button--add"
-      type="button"
-      @click="educationStore.addEducation"
-    >
+    <TheButton class="button--add" v-btn-primary @click="educationStore.addEducation">
       add education
-    </button>
+    </TheButton>
   </section>
 </template>

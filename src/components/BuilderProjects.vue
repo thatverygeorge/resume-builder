@@ -1,6 +1,7 @@
 <script setup>
 import { useProjectsStore } from '@/stores/projects';
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const projectsStore = useProjectsStore();
 const tabsStore = useTabsStore();
@@ -39,23 +40,15 @@ const tabsStore = useTabsStore();
           <input :id="`sourceCodeLink-${project.id}`" v-model="project.sourceCodeLink" type="url" />
         </div>
 
-        <button
-          class="button button--delete"
-          type="button"
-          @click="projectsStore.deleteProject(project.id)"
-        >
+        <TheButton class="button--delete" @click="projectsStore.deleteProject(project.id)">
           <span aria-hidden="true">delete</span>
           <span class="visually-hidden">delete project: {{ project.name }}</span>
-        </button>
+        </TheButton>
       </li>
     </ul>
 
-    <button
-      class="button button--primary button--add"
-      type="button"
-      @click="projectsStore.addProject"
-    >
+    <TheButton class="button--add" v-btn-primary @click="projectsStore.addProject">
       add project
-    </button>
+    </TheButton>
   </section>
 </template>

@@ -1,6 +1,7 @@
 <script setup>
 import { useExperienceStore } from '@/stores/experience';
 import { useTabsStore } from '@/stores/tabs';
+import TheButton from '@/components/TheButton.vue';
 
 const experienceStore = useExperienceStore();
 const tabsStore = useTabsStore();
@@ -56,23 +57,15 @@ const tabsStore = useTabsStore();
           <input :id="`techStack-${experience.id}`" v-model="experience.techStack" type="text" />
         </div>
 
-        <button
-          class="button button--delete"
-          type="button"
-          @click="experienceStore.deleteExperience(experience.id)"
-        >
+        <TheButton class="button--delete" @click="experienceStore.deleteExperience(experience.id)">
           <span aria-hidden="true">delete</span>
           <span class="visually-hidden">delete experience at: {{ experience.company }}</span>
-        </button>
+        </TheButton>
       </li>
     </ul>
 
-    <button
-      class="button button--primary button--add"
-      type="button"
-      @click="experienceStore.addExperience"
-    >
+    <TheButton class="button--add" v-btn-primary @click="experienceStore.addExperience">
       add experience
-    </button>
+    </TheButton>
   </section>
 </template>

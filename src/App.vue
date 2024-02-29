@@ -1,8 +1,9 @@
 <script setup>
 import { RouterView } from 'vue-router';
+import { useAboutStore } from '@/stores/about';
 import TheHeader from '@/components/TheHeader.vue';
 import TheFooter from '@/components/TheFooter.vue';
-import { useAboutStore } from '@/stores/about';
+import TheButton from '@/components/TheButton.vue';
 
 const aboutStore = useAboutStore();
 aboutStore.setCurrentAccentColor();
@@ -16,32 +17,32 @@ function print() {
   <TheHeader />
 
   <main class="main container">
-    <button
+    <TheButton
       v-if="$route.name !== 'home'"
-      class="button button--primary main__button main__button--go-back"
-      type="button"
+      class="main__button main__button--go-back"
+      v-btn-primary
       @click="$router.back"
     >
       go back
-    </button>
+    </TheButton>
 
-    <button
+    <TheButton
       v-if="$route.name === 'home'"
-      class="button button--primary main__button main__button--build-resume"
-      type="button"
+      class="main__button main__button--build-resume"
+      v-btn-primary
       @click="$router.push({ name: 'resume' })"
     >
       build resume
-    </button>
+    </TheButton>
 
-    <button
+    <TheButton
       v-if="$route.name === 'resume'"
-      class="button button--primary main__button main__button--print"
-      type="button"
+      class="main__button main__button--print"
+      v-btn-primary
       @click="print"
     >
       print
-    </button>
+    </TheButton>
 
     <RouterView />
   </main>
