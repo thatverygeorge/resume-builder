@@ -9,7 +9,8 @@ const languagesStore = useLanguagesStore();
     <h3 id="languages-heading">Languages</h3>
     <ul>
       <li v-for="language in languagesStore.languages.values()" :key="language.id">
-        {{ language.label }}: {{ language.value }}
+        <span v-if="language.label">{{ language.label }}: </span>
+        <span v-if="language.value">{{ language.value }}</span>
       </li>
     </ul>
   </section>

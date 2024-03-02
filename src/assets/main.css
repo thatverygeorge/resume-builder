@@ -33,6 +33,7 @@ html {
   color: var(--black);
   overflow-y: auto;
   scroll-behavior: smooth;
+  word-break: break-word;
 }
 
 body {
@@ -81,17 +82,27 @@ p {
 
 a {
   text-decoration: none;
-  color: var(--green);
-  border-radius: 0.5rem;
+  outline: none;
+  color: currentColor;
+  background-image: linear-gradient(
+    90deg,
+    var(--white),
+    var(--white) 50%,
+    transparent 50%,
+    transparent
+  );
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  background-size: 200% 2px;
+  transition: background-position 0.25s linear;
 }
 
 a:focus-visible {
-  outline: 2px solid var(--black);
-  outline-offset: 0.5rem;
+  background-position: 0 100%;
 }
 
 @media (hover: hover) {
   a:hover {
-    text-decoration: underline;
+    background-position: 0 100%;
   }
 }

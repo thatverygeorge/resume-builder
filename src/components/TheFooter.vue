@@ -16,7 +16,7 @@ footer {
   background-color: var(--green);
 }
 
-footer .container {
+.container {
   min-height: 10rem;
   display: flex;
   flex-direction: column;
@@ -28,9 +28,5 @@ footer h2 {
   text-align: end;
   font-size: 2rem;
   color: var(--white);
-}
-
-footer a {
-  color: inherit;
 }
 </style>

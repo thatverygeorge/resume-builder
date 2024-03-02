@@ -6,15 +6,19 @@ const aboutStore = useAboutStore();
 
 <template>
   <section
-    v-if="aboutStore.about.name && aboutStore.about.position"
+    v-if="aboutStore.about.name || aboutStore.about.position || aboutStore.about.techStack"
     aria-labelledby="resume-heading"
   >
     <h2 id="resume-heading">
-      {{ aboutStore.about.name }}
-      <br />
-      {{ aboutStore.about.position }}
-      <br />
-      [{{ aboutStore.about.techStack }}]
+      <span v-if="aboutStore.about.name">
+        {{ aboutStore.about.name }}
+        <br />
+      </span>
+      <span v-if="aboutStore.about.position">
+        {{ aboutStore.about.position }}
+        <br />
+      </span>
+      <span v-if="aboutStore.about.techStack">[{{ aboutStore.about.techStack }}]</span>
     </h2>
   </section>
 

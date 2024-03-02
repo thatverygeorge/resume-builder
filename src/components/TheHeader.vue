@@ -1,13 +1,7 @@
-<script setup>
-import { RouterLink } from 'vue-router';
-</script>
-
 <template>
   <header>
     <div class="container">
-      <h1>
-        <RouterLink :to="{ name: 'home' }">Resume Builder</RouterLink>
-      </h1>
+      <h1>Resume Builder</h1>
     </div>
   </header>
 </template>
@@ -17,7 +11,7 @@ header {
   background-color: var(--green);
 }
 
-header .container {
+.container {
   min-height: 10rem;
   display: flex;
   flex-direction: column;
@@ -25,13 +19,9 @@ header .container {
   gap: 2rem;
 }
 
-header h1 {
+h1 {
   text-align: center;
   font-size: 3rem;
   color: var(--white);
-}
-
-header a {
-  color: inherit;
 }
 </style>

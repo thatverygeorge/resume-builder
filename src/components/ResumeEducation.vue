@@ -10,12 +10,14 @@ const educationStore = useEducationStore();
     <ul>
       <li v-for="education in educationStore.education.values()" :key="education.id">
         <article>
-          <h4>
-            {{ education.academy }},
-            <br />
+          <h4 v-if="education.academy || education.course">
+            <span v-if="education.academy">
+              {{ education.academy }},
+              <br />
+            </span>
             {{ education.course }}
           </h4>
-          <p>
+          <p v-if="education.startDate || education.endDate">
             <time :datetime="education.startDate.split('-').slice(0, 2).join('-')">
               {{ education.startDate.split('-').reverse().slice(1).join('/') }}
             </time>

@@ -10,14 +10,14 @@ const projectsStore = useProjectsStore();
     <ul>
       <li v-for="project in projectsStore.projects.values()" :key="project.id">
         <article>
-          <h4>
+          <h4 v-if="project.name">
             {{ project.name }}
           </h4>
           <p v-if="project.description">
             {{ project.description }}
           </p>
-          <p>Tech stack: {{ project.techStack }}</p>
-          <div>
+          <p v-if="project.techStack">Tech stack: {{ project.techStack }}</p>
+          <div v-if="project.demoLink || project.sourceCodeLink">
             <a
               v-if="project.demoLink"
               :href="project.demoLink"
@@ -29,8 +29,13 @@ const projectsStore = useProjectsStore();
                 {{ `Demo of the ${project.name} project. Opens in a new tab.` }}
               </span>
             </a>
-            <span v-if="project.demoLink" aria-hidden="true"> | </span>
-            <a :href="project.sourceCodeLink" target="_blank" rel="noopener noreferrer">
+            <span v-if="project.demoLink && project.sourceCodeLink" aria-hidden="true"> | </span>
+            <a
+              v-if="project.sourceCodeLink"
+              :href="project.sourceCodeLink"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <span aria-hidden="true">Source</span>
               <span class="visually-hidden">
                 {{ `Source code of the ${project.name} project. Opens in a new tab.` }}
@@ -42,3 +47,21 @@ const projectsStore = useProjectsStore();
     </ul>
   </section>
 </template>
+
+<style scoped>
+/* article > * {
+  order: 2;
+}
+
+article > h4 {
+  order: 0;
+}
+
+article > div {
+  order: 1;
+} */
+
+a {
+  text-transform: uppercase;
+}
+</style>

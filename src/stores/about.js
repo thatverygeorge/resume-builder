@@ -6,7 +6,7 @@ const INITIAL_STATE = {
   position: '',
   techStack: '',
   description: '',
-  accentColor: '#fee715',
+  accentColor: '#f5b82e',
 };
 
 export const useAboutStore = defineStore('about', () => {
