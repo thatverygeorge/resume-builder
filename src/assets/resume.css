@@ -15,10 +15,6 @@
   --text-color: var(--black);
 
   --link-text-color: var(--black);
-  --link-decoration-color: var(--accentColor);
-  --link-outline-color: var(--black);
-
-  --link-text-color-hover: var(--black);
 
   section,
   article {

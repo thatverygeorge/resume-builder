@@ -49,18 +49,6 @@ const projectsStore = useProjectsStore();
 </template>
 
 <style scoped>
-/* article > * {
-  order: 2;
-}
-
-article > h4 {
-  order: 0;
-}
-
-article > div {
-  order: 1;
-} */
-
 a {
   text-transform: uppercase;
 }
